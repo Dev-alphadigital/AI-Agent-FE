@@ -51,9 +51,9 @@ export default function VerifyEmailPage() {
       <div className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         {/* Card Container */}
         <div className="w-full max-w-md">
-          <div className="bg-[#2A2A2A] rounded-2xl p-8 sm:p-10">
+          <div className="bg-[rgba(95,124,138,0.15)] backdrop-blur-md rounded-2xl p-8 sm:p-10 border border-[rgba(97,126,139,0.3)] shadow-2xl">
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-center">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-[#617e8b] to-[#fdfdfd] bg-clip-text text-transparent">
               Verify your email
             </h1>
 

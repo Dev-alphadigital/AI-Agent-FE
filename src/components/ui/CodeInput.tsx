@@ -67,14 +67,14 @@ export default function CodeInput({ length = 4, onComplete, error }: CodeInputPr
             onPaste={handlePaste}
             className={`
               w-14 h-14 rounded-lg
-              bg-gradient-to-r from-[#5c5b57] to-[#353533] border-0
+              bg-gradient-to-r from-[#5f7c8a] to-[#192125] border-0
               text-center text-2xl font-semibold
               text-white
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-0
               transition-all
               ${error ? 'bg-red-900/30 border border-red-500' : ''}
             `}
-            style={error ? {} : { background: 'linear-gradient(to right, #5c5b57 0%, #353533 100%)' }}
+            style={error ? {} : { background: 'linear-gradient(to right, #5f7c8a 0%, #192125 100%)' }}
           />
         ))}
       </div>
