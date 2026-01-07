@@ -65,7 +65,7 @@ export default function LoginPage() {
         {/* Content */}
         <div className="w-full max-w-lg">
           {/* Title */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-10 text-center leading-tight bg-gradient-to-r from-[#5f7c8a] to-[#192125] bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 text-center leading-tight bg-gradient-to-r from-[#617e8b] to-[#fdfdfd] bg-clip-text text-transparent">
             Welcome Back!
           </h1>
 
