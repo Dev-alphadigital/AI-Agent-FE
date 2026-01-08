@@ -36,12 +36,12 @@ export default function DashboardPage() {
         <div className="flex-1 flex flex-col h-full">
           {/* Header with Profile */}
           <header className="flex justify-end p-6 flex-shrink-0">
-            <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center">
               <Image
                 src="/pfp.png"
                 alt="Profile"
-                width={40}
-                height={40}
+                width={56}
+                height={56}
                 className="object-cover w-full h-full rounded-full"
               />
             </div>
@@ -60,7 +60,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden relative z-10 min-h-screen flex flex-col">
+      <div className="lg:hidden relative z-10 h-screen flex flex-col overflow-hidden">
         {/* Mobile Header */}
         <MobileHeader 
           isMenuOpen={isMobileMenuOpen}
@@ -68,7 +68,7 @@ export default function DashboardPage() {
         />
 
         {/* Mobile Tabs */}
-        <div className="px-4 pt-4">
+        <div className="px-4 pt-4 flex-shrink-0">
           <MobileTabs 
             selectedTab={selectedTab}
             onTabChange={setSelectedTab}
@@ -76,9 +76,11 @@ export default function DashboardPage() {
         </div>
 
         {/* Mobile Content */}
-        <main className="flex-1 px-4 pt-4 pb-6">
-          <KPICards isMobile={true} />
-          <div className="mt-6">
+        <main className="flex-1 flex flex-col px-4 pt-4 pb-6 min-h-0 overflow-hidden">
+          <div className="mb-4 flex-shrink-0">
+            <KPICards isMobile={true} />
+          </div>
+          <div className="flex-1 flex flex-col justify-end min-h-0">
             <KnowledgeBase />
           </div>
         </main>
