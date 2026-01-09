@@ -1,25 +1,29 @@
 'use client';
 
 import React from 'react';
-import { Home, Phone, Users, User, LogOut } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Home, Phone, Users, User, LogOut, Sparkles } from 'lucide-react';
 
 interface SidebarProps {
   onNavigate?: () => void;
 }
 
 export default function Sidebar({ onNavigate }: SidebarProps) {
+  const pathname = usePathname();
+  
   const menuItems = [
     {
       icon: <Home size={20} className="text-white" />,
       label: 'Home',
-      href: '#',
-      active: true,
+      href: '/dashboard',
+      active: pathname === '/dashboard',
     },
     {
       icon: <Phone size={20} className="text-white" />,
       label: 'Calls Record',
-      href: '#',
-      active: false,
+      href: '/call-records',
+      active: pathname === '/call-records',
     },
     {
       icon: <Users size={20} className="text-white" />,
@@ -33,6 +37,12 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
       href: '#',
       active: false,
     },
+    {
+      icon: <Sparkles size={20} className="text-white" />,
+      label: 'Assistants',
+      href: '#',
+      active: false,
+    },
   ];
 
   return (
@@ -43,7 +53,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
       {/* Menu Items */}
       <nav className="flex-1">
         {menuItems.map((item, index) => (
-          <a
+          <Link
             key={index}
             href={item.href}
             onClick={onNavigate}
@@ -55,7 +65,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
           >
             {item.icon}
             <span className="text-base">{item.label}</span>
-          </a>
+          </Link>
         ))}
       </nav>
 
