@@ -1,7 +1,12 @@
+'use client';
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div 
       className="min-h-screen w-full relative overflow-hidden"
@@ -54,13 +59,22 @@ export default function LoginPage() {
               <label htmlFor="password" className="block text-sm font-medium text-white mb-2">
                 Password
               </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                className="w-full px-4 py-3 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  className="w-full px-4 py-3 pr-12 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
             </div>
 
             {/* Forgot Password Link */}
