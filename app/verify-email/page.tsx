@@ -3,15 +3,15 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 export default function VerifyEmailPage() {
-  const [code, setCode] = useState(['', '', '', '']);
+  const [code, setCode] = useState(['', '', '', '', '']);
   const inputRef0 = useRef<HTMLInputElement>(null);
   const inputRef1 = useRef<HTMLInputElement>(null);
   const inputRef2 = useRef<HTMLInputElement>(null);
   const inputRef3 = useRef<HTMLInputElement>(null);
-  const inputRefs = [inputRef0, inputRef1, inputRef2, inputRef3];
+  const inputRef4 = useRef<HTMLInputElement>(null);
+  const inputRefs = [inputRef0, inputRef1, inputRef2, inputRef3, inputRef4];
 
   const handleChange = (index: number, value: string) => {
     if (value.length > 1) return;
@@ -21,7 +21,7 @@ export default function VerifyEmailPage() {
     setCode(newCode);
 
     // Auto-focus next input
-    if (value && index < 3) {
+    if (value && index < 4) {
       inputRefs[index + 1].current?.focus();
     }
   };
@@ -34,14 +34,14 @@ export default function VerifyEmailPage() {
 
   const handlePaste = (e: React.ClipboardEvent) => {
     e.preventDefault();
-    const pastedData = e.clipboardData.getData('text').slice(0, 4);
+    const pastedData = e.clipboardData.getData('text').slice(0, 5);
     const newCode = [...code];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       newCode[i] = pastedData[i] || '';
     }
     setCode(newCode);
-    if (pastedData.length === 4) {
-      inputRefs[3].current?.focus();
+    if (pastedData.length === 5) {
+      inputRefs[4].current?.focus();
     } else if (pastedData.length > 0) {
       inputRefs[pastedData.length - 1].current?.focus();
     }
@@ -71,14 +71,9 @@ export default function VerifyEmailPage() {
 
       {/* Form Container - Left Side */}
       <div className="relative z-10 min-h-screen flex items-center justify-start pl-12 lg:pl-20">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-xl">
           {/* Glassmorphism Container */}
-          <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            {/* Back Arrow */}
-            <Link href="/login" className="inline-flex items-center text-white hover:text-gray-300 transition-colors mb-6">
-              <ArrowLeft size={24} />
-            </Link>
-
+          <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-12 border border-white/20 shadow-2xl">
             {/* Title */}
             <h1 className="text-4xl font-bold mb-4 text-white text-left">
               Verify your mail
@@ -86,10 +81,10 @@ export default function VerifyEmailPage() {
 
             {/* Instructions */}
             <p className="text-gray-400 mb-8 text-sm leading-relaxed">
-              We sent a reset code to alpha...@gmail.com enter 4 digit code that is mentioned in the email.
+              We sent a reset code to alpha...@gmail.com enter 5 digit code that is mentioned in the email.
             </p>
 
-            {/* 4-Digit Code Input */}
+            {/* 5-Digit Code Input */}
             <div className="flex gap-3 mb-8 justify-center">
               {code.map((digit, index) => (
                 <input
