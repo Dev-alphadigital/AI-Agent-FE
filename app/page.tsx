@@ -25,18 +25,18 @@ export default function Home() {
       </div>
 
       {/* Form Container - Left Side */}
-      <div className="relative z-10 min-h-screen flex items-center justify-start pl-16 lg:pl-32">
-        <div className="w-full max-w-[700px]">
+      <div className="relative z-10 min-h-screen flex items-center justify-start pl-12 lg:pl-20">
+        <div className="w-full max-w-4xl">
           {/* Title */}
-          <h1 className="text-5xl lg:text-6xl font-bold mb-10 text-left">
+          <h1 className="text-4xl lg:text-5xl text-center font-bold mb-12 text-left">
             <span className="text-white">Welcome to</span>{" "}
-            <span className="text-[#165646]">AI Agent!</span>
+            <span className="text-[#266660]">AI Agent!</span>
           </h1>
 
           {/* Form */}
-          <form className="space-y-5">
+          <form>
             {/* Two Column Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
               {/* Left Column */}
               <div className="space-y-5">
                 {/* Full Name */}
@@ -48,8 +48,8 @@ export default function Home() {
                     type="text"
                     id="fullName"
                     name="fullName"
-                    placeholder="Enter your Full name here"
-                    className="w-full px-4 py-3 bg-transparent border border-[#165646]/50 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-[#165646] focus:ring-1 focus:ring-[#165646] transition-all"
+                    placeholder="Enter your full name"
+                    className="w-full px-4 py-3 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
                   />
                 </div>
 
@@ -62,8 +62,8 @@ export default function Home() {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Enter your Email here"
-                    className="w-full px-4 py-3 bg-transparent border border-[#165646]/50 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-[#165646] focus:ring-1 focus:ring-[#165646] transition-all"
+                    placeholder="Enter your email here"
+                    className="w-full px-4 py-3 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
                   />
                 </div>
 
@@ -76,8 +76,8 @@ export default function Home() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    placeholder="Enter your Phone number"
-                    className="w-full px-4 py-3 bg-transparent border border-[#165646]/50 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-[#165646] focus:ring-1 focus:ring-[#165646] transition-all"
+                    placeholder="Enter your phone number"
+                    className="w-full px-4 py-3 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
                   />
                 </div>
               </div>
@@ -93,8 +93,8 @@ export default function Home() {
                     type="text"
                     id="companyName"
                     name="companyName"
-                    placeholder="Enter your Company name here"
-                    className="w-full px-4 py-3 bg-transparent border border-[#165646]/50 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-[#165646] focus:ring-1 focus:ring-[#165646] transition-all"
+                    placeholder="Enter your company name"
+                    className="w-full px-4 py-3 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
                   />
                 </div>
 
@@ -107,8 +107,8 @@ export default function Home() {
                     type="password"
                     id="password"
                     name="password"
-                    placeholder="Enter your password here"
-                    className="w-full px-4 py-3 bg-transparent border border-[#165646]/50 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-[#165646] focus:ring-1 focus:ring-[#165646] transition-all"
+                    placeholder="Enter your password"
+                    className="w-full px-4 py-3 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
                   />
                 </div>
 
@@ -121,18 +121,18 @@ export default function Home() {
                     type="password"
                     id="repeatPassword"
                     name="repeatPassword"
-                    placeholder="Enter your password here"
-                    className="w-full px-4 py-3 bg-transparent border border-[#165646]/50 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-[#165646] focus:ring-1 focus:ring-[#165646] transition-all"
+                    placeholder="Repeat your password"
+                    className="w-full px-4 py-3 bg-transparent border border-white/40 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/50 transition-all"
                   />
                 </div>
               </div>
             </div>
 
             {/* Create Account Button - Centered */}
-            <div className="flex justify-center mt-10">
+            <div className="flex justify-center mt-12">
               <button
                 type="submit"
-                className="px-20 py-3.5 bg-[#165646] hover:bg-[#1a6b54] text-white font-semibold text-base rounded-lg transition-all duration-200 shadow-lg shadow-[#165646]/30"
+                className="px-24 py-3.5 bg-[#266660] hover:bg-[#2d7a73] text-white font-semibold text-lg rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#266660]/50"
               >
                 Create Account
               </button>
@@ -140,7 +140,7 @@ export default function Home() {
           </form>
 
           {/* Login Link */}
-          <div className="mt-8 text-center text-gray-400">
+          <div className="mt-10 text-center text-gray-400">
             Already have an account?{" "}
             <Link href="/login" className="text-white hover:text-gray-200 font-medium underline">
               Log in
